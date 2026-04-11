@@ -245,45 +245,45 @@ if 'Agg' not in matplotlib_backend:
     matplotlib.use('Agg')
 
 fig, axes = plt.subplots(2, 2, figsize=(12, 8))
-fig.suptitle('倒立振り子の制御シミュレーション (LQR制御)', fontsize=14, fontweight='bold')
+fig.suptitle('Control Inverted Pendulum (LQR)', fontsize=14, fontweight='bold')
 
 # プロット1: カート位置
 ax = axes[0, 0]
-ax.plot(t, x_lqr[:, 0], 'b-', linewidth=2, label='カート位置')
+ax.plot(t, x_lqr[:, 0], 'b-', linewidth=2, label='cart position')
 ax.axhline(y=0, color='k', linestyle='--', alpha=0.3)
-ax.set_xlabel('時間 [s]')
-ax.set_ylabel('位置 [m]')
-ax.set_title('カートの位置')
+ax.set_xlabel('time [s]')
+ax.set_ylabel('position [m]')
+ax.set_title('Cart Position')
 ax.grid(True, alpha=0.3)
 ax.legend()
 
 # プロット2: 振り子角度
 ax = axes[0, 1]
-ax.plot(t, np.degrees(x_lqr[:, 2]), 'r-', linewidth=2, label='振り子角度')
+ax.plot(t, np.degrees(x_lqr[:, 2]), 'r-', linewidth=2, label='pendulum angle')
 ax.axhline(y=0, color='k', linestyle='--', alpha=0.3)
-ax.set_xlabel('時間 [s]')
-ax.set_ylabel('角度 [度]')
-ax.set_title('振り子の角度')
+ax.set_xlabel('time [s]')
+ax.set_ylabel('angle [deg]')
+ax.set_title('Pendulum Angle')
 ax.grid(True, alpha=0.3)
 ax.legend()
 
 # プロット3: カート速度
 ax = axes[1, 0]
-ax.plot(t, x_lqr[:, 1], 'g-', linewidth=2, label='カート速度')
+ax.plot(t, x_lqr[:, 1], 'g-', linewidth=2, label='cart velocity')
 ax.axhline(y=0, color='k', linestyle='--', alpha=0.3)
-ax.set_xlabel('時間 [s]')
-ax.set_ylabel('速度 [m/s]')
-ax.set_title('カートの速度')
+ax.set_xlabel('time [s]')
+ax.set_ylabel('velocity [m/s]')
+ax.set_title('Cart Velocity')
 ax.grid(True, alpha=0.3)
 ax.legend()
 
 # プロット4: 振り子角速度
 ax = axes[1, 1]
-ax.plot(t, np.degrees(x_lqr[:, 3]), 'orange', linewidth=2, label='振り子角速度')
+ax.plot(t, np.degrees(x_lqr[:, 3]), 'orange', linewidth=2, label='pendulum angular velocity')
 ax.axhline(y=0, color='k', linestyle='--', alpha=0.3)
-ax.set_xlabel('時間 [s]')
-ax.set_ylabel('角速度 [度/s]')
-ax.set_title('振り子の角速度')
+ax.set_xlabel('time [s]')
+ax.set_ylabel('angular velocity [deg/s]')
+ax.set_title('Pendulum Angular Velocity')
 ax.grid(True, alpha=0.3)
 ax.legend()
 
